@@ -1,0 +1,73 @@
+{
+  "expo": {
+    "name": "EcoResolve",
+    "slug": "ecoresolve",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0B"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ecoresolve.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "EcoResolve needs camera access to upload waste proof photos.",
+        "NSPhotoLibraryUsageDescription": "EcoResolve needs photo library access to upload waste proof photos.",
+        "NSLocationWhenInUseUsageDescription": "EcoResolve uses your location to find nearby cleanup drives.",
+        "NSLocationAlwaysUsageDescription": "EcoResolve uses your location to find nearby cleanup drives."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0B"
+      },
+      "package": "com.ecoresolve.app",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "VIBRATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "EcoResolve uses your location to find nearby cleanup drives."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "EcoResolve needs access to your photos to upload waste proof.",
+          "cameraPermission": "EcoResolve needs camera access to capture waste photos."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#00F2FF"
+        }
+      ]
+    ],
+    "scheme": "ecoresolve",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
